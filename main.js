@@ -8,7 +8,7 @@ const mediumP = document.querySelector("p.medium");
 const descriptionP = document.querySelector("p.description");
 const loadingSpan = document.querySelector("p.loading");
 const artTextDiv = document.querySelector(".art-text");
-
+const chosenImageImg = document.querySelector(".chosen-image img");
 const apiKeyInput = document.querySelector("input#api-token");
 
 if (hasLocalStorage("OPENAI_KEY")) {
@@ -106,7 +106,8 @@ document.getElementById("imageInput").addEventListener("change", function () {
       base64String = event.target.result;
       const image = document.createElement("img");
       image.src = base64String;
-      document.querySelector(".chosen-image").appendChild(image);
+      chosenImageImg.src = base64String;
+      chosenImageImg.classList.remove("hidden");
     };
 
     reader.readAsDataURL(file);
