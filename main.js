@@ -104,6 +104,9 @@ document.getElementById("imageInput").addEventListener("change", function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       base64String = event.target.result;
+      const image = document.createElement("img");
+      image.src = base64String;
+      document.querySelector(".chosen-image").appendChild(image);
     };
 
     reader.readAsDataURL(file);

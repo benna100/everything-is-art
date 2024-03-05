@@ -144,9 +144,19 @@ input {
   max-width: 300px;
 }
 
-img {
+img.download {
   width: 23px;
   transform: translateY(4px);
+}
+
+.chosen-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.chosen-image img {
+  width: 20%;
 }
 
 h1 {
