@@ -43,8 +43,9 @@ document.querySelector("button").addEventListener("click", () => {
             Please respond in the following format
               ARTIST_TITLE;YEAR_ARTIST_WAS_BORN;TITLE_OF_ART_WORK;CREATED_YEAR;MEDIUM_DESCRIPTION;FANCY_DESCRIPTION_OF_ARTWORK
 
-              Here is an example:
-              Wayne Thiebaud; 1920; Diagonal Freeway; 1993; Acrylic of canvas; "Whispers of Eternity" is an enigmatic masterpiece by the illustrious artist Isabella Rosetti, created in the pivotal year of 1894.  At its heart lies a solitary figure, cloaked in whispers of silk, gazing into the horizon where the first light of dawn meets the shadowy embrace of the night. Rosetti's masterful brushwork imbues the scene with a palpable sense of longing and introspection, weaving a complex tapestry of emotions that resonate with the soul's deepest yearnings. 
+              Here are two examples:
+              Wayne Thiebaud; 1920; Diagonal Freeway; 1993; Acrylic of canvas; "Diagonal Freeway" is an enigmatic masterpiece by the illustrious artist Isabella Rosetti, created in the pivotal year of 1894.  At its heart lies a solitary figure, cloaked in whispers of silk, gazing into the horizon where the first light of dawn meets the shadowy embrace of the night. Rosetti's masterful brushwork imbues the scene with a palpable sense of longing and introspection, weaving a complex tapestry of emotions that resonate with the soul's deepest yearnings. 
+              Kelly Hughes; 1942; White Curves 11; 1978; Oil on Panel; Beginning early in his career, Kelly moved seamlessly between two and three dimensions, transposing the precisely delineated contours of his painted canvases into reliefs and sculptures. Kelly first made freestanding sculptures in the late 1950s, crafting objects in thinly painted metal. As his studio space and ambition grew, so too did the scope of his sculpture practice.
               `,
           },
           {
