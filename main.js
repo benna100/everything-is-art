@@ -16,6 +16,7 @@ if (hasLocalStorage("OPENAI_KEY")) {
 }
 
 document.querySelector("button").addEventListener("click", () => {
+  artTextDiv.classList.add("hidden");
   if (!base64String) {
     alert("Insert an image");
   }
