@@ -38,7 +38,7 @@ document.querySelector("button").addEventListener("click", () => {
         content: [
           {
             type: "text",
-            text: `Describe the following image as if it was an art piece. The description should be artsy and humorous 
+            text: `Describe the following image as if it was an art piece 
             Never write UNKNOWN_ARTIST or UNKNOWN_YEAR_OF_BIRTH or UNKNOWN_CREATION_YEAR. For YEAR_ARTIST_WAS_BORN and CREATED_YEAR always make a year up. 
             Please respond in the following format
               ARTIST_TITLE;YEAR_ARTIST_WAS_BORN;TITLE_OF_ART_WORK;CREATED_YEAR;MEDIUM_DESCRIPTION;FANCY_DESCRIPTION_OF_ARTWORK
