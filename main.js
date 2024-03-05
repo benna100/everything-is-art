@@ -90,6 +90,7 @@ document.querySelector("button").addEventListener("click", () => {
       });
     })
     .catch((error) => {
+      artTextDiv.classList.add("hidden");
       loadingSpan.classList.add("hidden");
       alert("error", error);
     });
