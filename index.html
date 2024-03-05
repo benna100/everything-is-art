@@ -4,15 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="poppins-regular">
     <h1>Everything is art!</h1>
-    <div>
-      <input type="file" id="imageInput" accept="image/*" />
-      <input type="text" id="api-token" />
+    <h2 class="merriweather-regular">
+      Take a picture of anything and get an arty description for that image
+    </h2>
+    <div class="all-input">
+      <div class="image-input-wrapper">
+        <label class="button-style" for="imageInput"
+          >Upload image <img src="./download.png" alt="Download icon"
+        /></label>
+        <input type="file" id="imageInput" accept="image/*" />
+      </div>
+      <label class="api-token-label" for="api-token"
+        >Find your api-key
+        <a target="_blank" href="//https://platform.openai.com/api-keys"
+          >here</a
+        >
+      </label>
+      <input type="text" id="api-token" placeholder="Insert OpenAI api-key" />
+
+      <button class="button-style">Get art description</button>
     </div>
-    <button>Get art description</button>
+
+    <p class="loading hidden">Getting art description...</p>
+
+    <div class="art-text hidden">
+      <div class="artist-dateOfBirth">
+        <span class="artist poppins-extrabold"></span>
+        <span class="dateOfBirth"></span>
+      </div>
+      <div class="title-createdYear">
+        <span class="title poppins-extrabold-italic"></span>
+        <span class="createdYear"></span>
+      </div>
+      <p class="medium"></p>
+      <p class="description"></p>
+    </div>
     <script type="module" src="main.js"></script>
     <p></p>
+    <footer>
+      Created by
+      <a target="_blank" href="https://benna100.github.io/portfolio/">me</a>.
+      <br />
+      I wont steal your api-key, check the code
+      <a
+        target="_blank"
+        href="https://github.com/benna100/everything-is-art/blob/main/main.js"
+        >here</a
+      >
+    </footer>
   </body>
 </html>
