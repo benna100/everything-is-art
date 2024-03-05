@@ -178,7 +178,6 @@ h1 span {
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
 }
 
 h2 {
