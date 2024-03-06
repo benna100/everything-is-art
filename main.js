@@ -15,6 +15,15 @@ if (hasLocalStorage("OPENAI_KEY")) {
   apiKeyInput.value = localStorage.getItem("OPENAI_KEY");
 }
 
+const searchParams = new URLSearchParams(window.location.search);
+console.log(searchParams.has("apikey")); // true
+console.log(searchParams.get("apikey")); // price_descending
+
+if (searchParams.has("apikey")) {
+  apiKeyInput.classList.add("hidden");
+  apiKeyInput.value = searchParams.get("apikey");
+}
+
 document.querySelector("button").addEventListener("click", () => {
   artTextDiv.classList.add("hidden");
   if (!base64String) {
