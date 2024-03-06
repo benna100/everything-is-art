@@ -16,8 +16,6 @@ if (hasLocalStorage("OPENAI_KEY")) {
 }
 
 const searchParams = new URLSearchParams(window.location.search);
-console.log(searchParams.has("apikey")); // true
-console.log(searchParams.get("apikey")); // price_descending
 
 if (searchParams.has("apikey")) {
   apiKeyInput.classList.add("hidden");
