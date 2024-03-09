@@ -205,8 +205,9 @@ button {
 }
 
 footer {
-  margin: 48px 24px 24px;
+  margin: 56px 24px 24px;
   text-align: center;
+  line-height: 1.6rem;
 }
 .api-token-label {
   margin-bottom: 6px;
