@@ -22,6 +22,11 @@ if (searchParams.has("apikey")) {
   apiKeyInput.value = searchParams.get("apikey");
 }
 
+let language;
+if (searchParams.has("lang")) {
+  language = searchParams.get("lang");
+}
+
 document.querySelector("button").addEventListener("click", () => {
   artTextDiv.classList.add("hidden");
   if (!base64String) {
@@ -36,16 +41,8 @@ document.querySelector("button").addEventListener("click", () => {
 
   const apiKey = apiKeyInput.value;
   localStorage.setItem("OPENAI_KEY", apiKeyInput.value);
-  const url = "https://api.openai.com/v1/chat/completions";
-  const data = {
-    model: "gpt-4o",
-    messages: [
-      {
-        role: "user",
-        content: [
-          {
-            type: "text",
-            text: `Describe the following image as if it was an art piece. Dont use words that are hard to understand! 
+
+  const englishPrompt = `Describe the following image as if it was an art piece. Dont use words that are hard to understand! 
             Never write UNKNOWN_ARTIST or UNKNOWN_YEAR_OF_BIRTH or UNKNOWN_CREATION_YEAR. For YEAR_ARTIST_WAS_BORN and CREATED_YEAR always make a year up. 
             Please respond in the following format
               ARTIST_TITLE;YEAR_ARTIST_WAS_BORN;TITLE_OF_ART_WORK;CREATED_YEAR;MEDIUM_DESCRIPTION;FANCY_DESCRIPTION_OF_ARTWORK
@@ -55,7 +52,33 @@ document.querySelector("button").addEventListener("click", () => {
               Wayne Thiebaud; 1920; Diagonal Freeway; 1993; Acrylic of canvas; "Diagonal Freeway" is an enigmatic masterpiece by the illustrious artist Isabella Rosetti, created in the pivotal year of 1894.  At its heart lies a solitary figure, cloaked in whispers of silk, gazing into the horizon where the first light of dawn meets the shadowy embrace of the night. Rosetti's masterful brushwork imbues the scene with a palpable sense of longing and introspection, weaving a complex tapestry of emotions that resonate with the soul's deepest yearnings. 
               Kelly Hughes; 1942; White Curves 11; 1978; Oil on Panel; Beginning early in his career, Kelly moved seamlessly between two and three dimensions, transposing the precisely delineated contours of his painted canvases into reliefs and sculptures. Kelly first made freestanding sculptures in the late 1950s, crafting objects in thinly painted metal. As his studio space and ambition grew, so too did the scope of his sculpture practice.
               ---
-              `,
+              `;
+  // Bruger ikke det her, mini er ikke god på dansk
+  const danishPrompt = `
+                beskriv det følgende billede som om det var et kunsstykke. Undgå at bruge ord der er svære at forstå. 
+                Aldrig skriv UNKNOWN_ARTIST eller UNKNOWN_YEAR_OF_BIRTH eller UNKNOWN_CREATION_YEAR. For YEAR_ARTIST_WAS_BORN og CREATED_YEAR altid find på et år.  
+                Svar i det følgende format: 
+
+                ARTIST_TITLE;YEAR_ARTIST_WAS_BORN;TITLE_OF_ART_WORK;CREATED_YEAR;MEDIUM_DESCRIPTION;FANCY_DESCRIPTION_OF_ARTWORK
+  
+                Her er to eksempler på engelsk:
+                ---
+                Wayne Thiebaud; 1920; Diagonal Freeway; 1993; Acrylic of canvas; "Diagonal Freeway" is an enigmatic masterpiece by the illustrious artist Isabella Rosetti, created in the pivotal year of 1894.  At its heart lies a solitary figure, cloaked in whispers of silk, gazing into the horizon where the first light of dawn meets the shadowy embrace of the night. Rosetti's masterful brushwork imbues the scene with a palpable sense of longing and introspection, weaving a complex tapestry of emotions that resonate with the soul's deepest yearnings. 
+                Kelly Hughes; 1942; White Curves 11; 1978; Oil on Panel; Beginning early in his career, Kelly moved seamlessly between two and three dimensions, transposing the precisely delineated contours of his painted canvases into reliefs and sculptures. Kelly first made freestanding sculptures in the late 1950s, crafting objects in thinly painted metal. As his studio space and ambition grew, so too did the scope of his sculpture practice.
+                ---
+                Husk at svar på dansk
+                `;
+
+  const url = "https://api.openai.com/v1/chat/completions";
+  const data = {
+    model: "gpt-4o-mini",
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "text",
+            text: englishPrompt,
           },
           {
             type: "image_url",
